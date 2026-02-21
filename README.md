@@ -99,6 +99,8 @@ PORT=5000
 
 Only the key for your selected provider is required.
 
+---
+
 ### 🛠️ Local Setup
 1. Clone the repository
 git clone <your-repo-url>
@@ -138,20 +140,33 @@ Example Response
   "confidence": 0.82
 }
 
+---
+
 ### ⚠️ Notable Engineering Challenges
 
 During development, a key challenge was handling LLM structured output reliability:
 
 LLMs sometimes return numbers as strings
+
 Schema mismatches can trigger silent retries
+
 Retries increase latency and token usage
+
 This was resolved using Zod coercion to safely normalize model output while preserving validation guarantees.
+
+---
+
 
 ### 🔮 Future Improvements
 
 User authentication
+
 Persistent query history
+
 Rate limiting per user
+
 Streaming responses
+
 Multi-step agent workflows
+
 Cloud deployment
